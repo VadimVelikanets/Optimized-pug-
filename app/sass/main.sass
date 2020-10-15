@@ -16,8 +16,8 @@ body
   min-width: 320px
   position: relative
   line-height: 1.3
-  font-family: $default-font
-  overflow-x: hidden
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden
   opacity: 1
   color: $default-color
 
@@ -36,6 +36,7 @@ body
     color: $default-color
 
     &:hover
+      text-decoration: none
       color: $default-color
 
 b, strong
@@ -68,7 +69,7 @@ ul
   align-items: flex-start
   justify-content: flex-start
 
-.flex__beetwen
+.flex__between
   display: flex
   align-items: flex-start
   justify-content: space-between
@@ -89,40 +90,44 @@ ul
   background-position: center
   background-repeat: no-repeat
   background-size: contain
+header
+  position: relative
+  box-shadow:  0px 5px 11px 0px rgba(50, 50, 50, 0.4);
+  .header__desktop
+    li
+      padding: 30px
+    .main__menu > li:hover
+        border-bottom: 1px orangered solid
+  .submenu
+    visibility: hidden
+    opacity: 0
 
-//hamburger
-.my_hamburger
-  cursor: pointer
-  display: block
-  width: 24px
-  height: 24px
-  .hamburger_block
-    position: relative
-    height: 100%
-    .hamburger_top
-      top: 6px
-    .hamburger_bottom
-      top: 16px
-  .hamburger_top, .hamburger_bottom
     position: absolute
-    transition: top .3s cubic-bezier(0.04, 0.04, 0.12, 1) .2999s,transform .1s cubic-bezier(0.04, 0.04, 0.12, 1)
-    width: 24px
-    height: 2px
-    background-color: #4A4A4A
-    border-radius: 2px
-  &.is-active
-    .hamburger_block
-      .hamburger_top, .hamburger_bottom
-        transition: top .3s cubic-bezier(0.04, 0.04, 0.12, 1),transform .1s cubic-bezier(0.04, 0.04, 0.12, 1) .29999s
-      .hamburger_top
-        top: 11px
-        transform: rotate(45deg)
-      .hamburger_bottom
-        top: 11px
-        transform: rotate(-45deg)
+    top: 84px
+    transform: translateX(-50%)
+    left: 50%
+    width: 100vw
+    //background: rgba(0,0,0,0.4)
+    transition: 0.5s all ease
+    z-index: 5
+    //height: 100vh
+    .submenu__wrapper
+      background: #ffffff
+      width: 100%
+      margin: 0 auto
+      box-shadow: -2px 2px 11px 1px rgba(0,0,0,0.5);
+    .third__menu
+      li
+        font-size: 15px
 
-
-
+  li.hasChild:hover .submenu
+    visibility: visible
+    opacity: 1
+main
+  padding: 60px 0
+  height: 100vh
+.header__mobile
+  display: none
 @import "media"
 // Always at the end
 
